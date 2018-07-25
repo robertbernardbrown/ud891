@@ -19,7 +19,6 @@
     this.buttons = slice(this.el.querySelectorAll('.radio'));
     this.focusedIdx = 0;
     this.focusedButton = this.buttons[this.focusedIdx];
-
     this.el.addEventListener('keydown', this.handleKeyDown.bind(this));
   }
 
@@ -28,28 +27,25 @@
 
       case VK_UP:
       case VK_LEFT: {
-
         e.preventDefault();
-
-        // This seems like a good place to do some stuff :)
-
+        console.log(this.focusedIdx)
+        this.focusedIdx > 0 ? --this.focusedIdx : this.focusedIdx = 4;
         break;
 
       }
 
       case VK_DOWN:
       case VK_RIGHT: {
-
         e.preventDefault();
+        console.log(this.focusedIdx)
 
-        // This seems like a good place to do some stuff :)
-
+        this.focusedIdx < 4 ? ++this.focusedIdx : this.focusedIdx = 0;
         break;
       }
 
     }
 
-    this.changeFocus(this.focusedIdx); // <-- Hmm, interesting...
+    this.changeFocus(this.focusedIdx);
   };
 
   RadioGroup.prototype.changeFocus = function(idx) {
