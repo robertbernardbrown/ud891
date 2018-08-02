@@ -38,30 +38,30 @@
       <div class="card product-card">
         <img class="product-card__img" src="{{img}}" alt="{{img_alt}}" />
         <div class="product-card__content">
-          <div class="tag product-card__tag">Product Of The Month</div>
-          <h3 class="product-card__title">{{title}}</h3>
+          <h1 class="tag product-card__tag" tabindex="0">Product Of The Month</h1>
+          <h3 class="product-card__title" tabindex="0">{{title}}</h3>
           <div class="product-card__rating">
             <div class="stars" tabindex="0">
               <div class="star">
-                <img src="images/star-off.png">
+                <img src="images/star-off.png" alt="star">
               </div>
               <div class="star">
-                <img src="images/star-off.png">
+                <img src="images/star-off.png" alt="star">
               </div>
               <div class="star">
-                <img src="images/star-off.png">
+                <img src="images/star-off.png" alt="star">
               </div>
               <div class="star">
-                <img src="images/star-off.png">
+                <img src="images/star-off.png" alt="star">
               </div>
               <div class="star">
-                <img src="images/star-off.png">
+                <img src="images/star-off.png" alt="star">
               </div>
             </div>
           </div>
           <div class="product-card__purchase-info">
             <div class="product-card__prices">
-              <span class="product-card__price">{{price}}</span>
+              <span class="product-card__price" tabindex="0">{{price}}</span>
             </div>
             <div class="product-card__amount">
               <div id="number-live" class="offscreen" aria-live="assertive"></div>
@@ -107,7 +107,7 @@
 </head>
 
 <body>
-  <div class="nav">
+  <nav class="nav">
     <div class="container">
       <a href="/">
         <h1 class="logo">Udacity Lifestyle</h1>
@@ -115,16 +115,16 @@
       <!-- The focus ring on this shopping bag is a little ugly
            Not a huge deal, but if you feel like trying to improve it you
            certainly can! -->
-      <a href="/placeholder.html" class="shopping-bag"></a>
+      <a href="/placeholder.html" title="shopping cart" class="shopping-bag"></a>
     </div>
-  </div>
+  </nav>
   <div class="content-wrapper">
-    <div class="main">
-      <div id="top-posts"></div>
-      <div id="product-of-the-month"></div>
-      <div id="todays-posts"></div>
-    </div>
-    <div class="aside">
+    <main class="main">
+      <article id="top-posts"></article>
+      <article id="product-of-the-month"></article>
+      <article id="todays-posts"></article>
+    </main>
+    <aside class="aside">
       <div class="hot-list">
         <h2 class="hot-list__header" tabindex="0">Hot List</h2>
         <div id="list-posts" class="list-post-wrapper"></div>
@@ -139,19 +139,19 @@
         </h3>
         <form action="/placeholder.html" method="post">
           <input type="text" id="sub-name" class="subscribe-card__field">
-          <div class="subscribe-card__label">
+          <label id="name" class="subscribe-card__label" for="sub-name">
             Name
-          </div>
+          </label>
           <input type="text" id="sub-email" class="subscribe-card__field">
-          <div for="sub-email" class="subscribe-card__label">
+          <label for="sub-email" class="subscribe-card__label">
             E-Mail
-          </div>
-          <div id="sub-btn" class="btn btn_framed">
+          </label>
+          <a href="/" id="sub-btn" class="btn btn_framed">
             Yes, Please
-          </div>
+          </a>
         </form>
       </div>
-    </div>
+    </aside>
   </div>
 
   <script src="scripts/app.js"></script>
